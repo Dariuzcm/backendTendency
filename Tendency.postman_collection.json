@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "3d321d39-6864-4bd9-8781-6fd6ab03a3df",
+		"name": "Tendency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7360928"
+	},
+	"item": [
+		{
+			"name": "CreateApp",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impvc3MiLCJkYXRlIjoxNjgyODMzNTc2NzU0LCJpYXQiOjE2ODI4MzM1NzYsImV4cCI6MTY4Mjg2OTU3Nn0.afc_FVhyaxbXIqlW9eCHALUgpf18WZG8p6PNzs8DsFM"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"newApplication\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/logs"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateAuth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impvc3MiLCJkYXRlIjoxNjgyODMzNTc2NzU0LCJpYXQiOjE2ODI4MzM1NzYsImV4cCI6MTY4Mjg2OTU3Nn0.afc_FVhyaxbXIqlW9eCHALUgpf18WZG8p6PNzs8DsFM"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"application_id\": \"644e0e653f4b7ebdb882c9a2\",\r\n    \"token\": \"this is a token\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/logs"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateLog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impvc3MiLCJkYXRlIjoxNjgyODMzNTc2NzU0LCJpYXQiOjE2ODI4MzM1NzYsImV4cCI6MTY4Mjg2OTU3Nn0.afc_FVhyaxbXIqlW9eCHALUgpf18WZG8p6PNzs8DsFM"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"application_id\": \"644e0e653f4b7ebdb882c9a2\",\r\n    \"type\": \"warning\",\r\n    \"path\": \"high\",\r\n    \"request\": {\r\n        \"data\" : {}\r\n    },\r\n    \"response\": {\r\n        \"data\" : {}\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/logs"
+			},
+			"response": []
+		},
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"joss4\",\r\n    \"password\": \"mypassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "localhost:3000/users"
+			},
+			"response": []
+		},
+		{
+			"name": "info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impvc3MiLCJkYXRlIjoxNjgyODc4OTYxNjU5LCJpYXQiOjE2ODI4Nzg5NjEsImV4cCI6MTY4MjkxNDk2MX0.nVDGZl1krgwqwf6t1mV3DcViGCdVIDciicLA_lLYpDo"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/api/logs/644e0e653f4b7ebdb882c9a2"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impvc3MiLCJkYXRlIjoxNjgyODc4OTYxNjU5LCJpYXQiOjE2ODI4Nzg5NjEsImV4cCI6MTY4MjkxNDk2MX0.nVDGZl1krgwqwf6t1mV3DcViGCdVIDciicLA_lLYpDo"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Change application name too\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/logs/644e0e653f4b7ebdb882c9a2"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Impvc3MiLCJkYXRlIjoxNjgyODc4OTYxNjU5LCJpYXQiOjE2ODI4Nzg5NjEsImV4cCI6MTY4MjkxNDk2MX0.nVDGZl1krgwqwf6t1mV3DcViGCdVIDciicLA_lLYpDo"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Change application name too\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:3000/api/logs/644e0e653f4b7ebdb882c9a2"
+			},
+			"response": []
+		}
+	]
+}

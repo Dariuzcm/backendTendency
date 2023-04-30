@@ -1,0 +1,45 @@
+const jwt = require('jsonwebtoken');
+const {logs, authorizations, application} = require("../Models/Schemas")
+const secret = 'hellodata'
+
+function verifyToken(headerAuthorization) {
+  const authHeader = headerAuthorization?.split(' ')
+  let token = null
+  let isAlive = 0
+  if (authHeader && authHeader[0] === 'Bearer') {
+    token = authHeader[1]
+  }
+  if (token) {
+
+    try {
+      const decoded = jwt.verify(token, secret)
+      const { date } = decoded;
+      const now = Date.now()
+      isAlive = now - date
+    } catch (error) {
+      return { error: 'Invalid Token', message: error.message }
+    }
+  }
+  if (isAlive <= 0 || !token) {
+    return { error: 'Invalid Token' }
+  }
+}
+
+function validateSchema(data) {
+  const isLog = logs.validate(data)
+  const isAuthorization = authorizations.validate(data)
+  const isApplication = application.validate(data)
+
+  let option = null
+
+  option = isLog.error ? null : 'logger';
+  if (!option) {
+    option = isAuthorization.error ? null : 'authorizations';
+  }
+  if (!option) {
+    option = isApplication.error ? null : 'application';
+  }
+  return option
+}
+
+module.exports = { verifyToken, secret, validateSchema }
